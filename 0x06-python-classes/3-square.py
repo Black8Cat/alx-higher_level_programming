@@ -6,25 +6,25 @@ class Square:
     """Defines a square."""
 
     def __init__(self, size=0):
-        """Constructor.
+        """
+        Initializes a square instance.
 
         Args:
-            size: Length of a size of the square.
+            size (int): The size of the square (default is 0).
+        """
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
 
-        Raises:
-            TypeError: if size is not an integer.
-            ValueError: if size is less than 0.
-    """
-    if not isinstance(size, int):
-        raise TypeError('size must be an integer')
-    if size < 0:
-        raise ValueError('size must be >= 0')
-    self.__size = size
+        if size < 0:
+            raise ValueError("size must be >= 0")
+
+        self.__size = size
 
     def area(self):
-        """Area of this square.
+        """
+        Calculates the area of the square.
 
         Returns:
-            The size squared
+            int: The area of the square.
         """
         return self.__size ** 2
